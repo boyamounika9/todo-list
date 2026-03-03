@@ -22,7 +22,7 @@
     <div class="container">
         <h1>MOUNIKA's TODO LIST</h1>
         <div class="main">
-            <input  class="inputfield" id="inputdata" type="text" placeholder="enter your task">
+            <input  class="inputfield" id="inputdata" type="text" placeholder="enter your task" oninput="inputChange()"/>
             <button class="addbutton" id="addingbutton">add</button>  
         </div>
         <div class="next">
@@ -32,11 +32,34 @@
         </div>
     </div>
     <script>
-        let inputfield = document.getElementById("inputdata")
-        let addbutton = document.getElementById("addingbutton")
-        let tasklist = document.getElementById("taskslist")
 
+        function inputChange(){
+            console.log("something is being entered")
+        }
+        let taskInput = document.getElementById("inputdata")
+        let addTaskButton = document.getElementById("addingbutton")
+        let taskList = document.getElementById("taskslist")
+
+        addTaskButton.addEventListener("click",()=>{
+          const taskText = taskInput.value.trim();
+
+          if(taskInput === ''){
+            alert("please enter a task !")
+            return
+          }
+
+          const listItem = document.createElement('li');
+
+          const taskSpan = document.createElement('span');
+          taskSpan.textContent=taskText;
+
+          const deleteButton = document.createElement('button');
+          deleteButton.style.color='red';
+          deleteButton.textContent='Delete';
+
+          
         
+        })
     </script>
 </body>
 </html>
