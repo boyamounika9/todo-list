@@ -43,13 +43,19 @@
             display: flex;
             gap: 30px;
         }
+        .list{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
     </style>
 </head>
 <body>
     <div class="container">
         <h1>MOUNIKA's TODO LIST</h1>
-
+       <div class="list">
         <div class="main">
             <input  class="inputfield" id="inputdata" type="text" placeholder="enter your task" oninput="inputChange()"/>
             <button class="addbutton" id="addingbutton">add</button>  
@@ -58,6 +64,7 @@
             <ul class="tasklist" id="taskslist">
 
             </ul>
+        </div>
         </div>
     </div>
     <script>
